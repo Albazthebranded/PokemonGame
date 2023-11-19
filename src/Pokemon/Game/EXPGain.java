@@ -2,7 +2,7 @@ package Pokemon.Game;
 
 public class EXPGain {
 
-    public void gainExp (Pokemon.Game.Pokemon attacker, Pokemon.Game.Pokemon defender) {
+    public void gainExp (Pokemon attacker, Pokemon defender) {
         double temp;
         double lvlsGained = 1;
 

@@ -19,5 +19,7 @@ public class Moves {
         energyVar = -40;
         speed = "charged";
 
+
+
     }
 }

@@ -2,8 +2,8 @@ package Pokemon.Game;
 
 public class Effectiveness {
 
-    private final Pokemon.Game.Pokemon defender = new Pokemon.Game.Pokemon();
-    private final Pokemon.Game.Moves move = new Pokemon.Game.Moves();
+    private final Pokemon defender = new Pokemon();
+    private final Moves move = new Moves();
     private static double normalX = 1.0, fightingX = 1.0, flyingX = 1.0, poisonX = 1.0, groundX = 1.0, rockX = 1.0, bugX = 1.0, ghostX = 1.0, steelX = 1.0,
             fireX = 1.0, waterX = 1.0, grassX = 1.0, electricX = 1.0, psychicX = 1.0, iceX = 1.0, dragonX = 1.0, darkX = 1.0, fairyX = 1.0;
 

@@ -2,12 +2,12 @@ package Pokemon.Game;
 
 public class Attack {
 
-    private final Pokemon.Game.Effectiveness effectiveness = new Pokemon.Game.Effectiveness();
-    private final Pokemon.Game.EnergyCalculator energy = new Pokemon.Game.EnergyCalculator();
-    private final Pokemon.Game.HealthFormat healthFormat = new Pokemon.Game.HealthFormat();
-    private final Pokemon.Game.EXPGain exp = new Pokemon.Game.EXPGain();
+    private final Effectiveness effectiveness = new Effectiveness();
+    private final EnergyCalculator energy = new EnergyCalculator();
+    private final HealthFormat healthFormat = new HealthFormat();
+    private final EXPGain exp = new EXPGain();
 
-    public void attack(Pokemon.Game.Pokemon attacker, Pokemon.Game.Pokemon defender, Pokemon.Game.Moves move) {
+    public void attack(Pokemon attacker, Pokemon defender, Moves move) {
         double STABMultiplier;
         double effective = effectiveness.effectiveness(move.moveType, defender.type, defender.type2);
 

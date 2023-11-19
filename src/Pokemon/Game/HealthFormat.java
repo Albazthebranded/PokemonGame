@@ -2,7 +2,7 @@ package Pokemon.Game;
 
 public class HealthFormat {
 
-    public void healthFormat(Pokemon.Game.Pokemon pokemon, double currentHp, double maxHp) {
+    public void healthFormat(Pokemon pokemon, double currentHp, double maxHp) {
         if (currentHp > maxHp) {
             currentHp = maxHp;
         }
