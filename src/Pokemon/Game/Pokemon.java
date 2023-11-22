@@ -51,7 +51,7 @@ public class Pokemon {
         maxExp = 90 + (10 * level);
     }
 
-        public void bulbasaur() {
+    public void bulbasaur() {
             name = "Bulbasaur";
             pokedexNumber = 1;
             type = "grass";
@@ -66,7 +66,8 @@ public class Pokemon {
             currentExp = 0;
             maxExp = 90 + (10 * level);
         }
-        public void ivysaur() {
+    
+    public void ivysaur() {
             name = "Ivysaur";
             pokedexNumber = 2;
             type = "grass";
@@ -81,6 +82,7 @@ public class Pokemon {
             currentExp = 0;
             maxExp = 90 + (10 * level);
         }
+    
     public void venusaur() {
         name = "Venusaur";
         pokedexNumber = 3;
@@ -96,6 +98,7 @@ public class Pokemon {
         currentExp = 0;
         maxExp = 90 + (10 * level);
     }
+    
     public void charmander() {
         name = "Charmander";
         pokedexNumber = 4;
@@ -111,6 +114,7 @@ public class Pokemon {
         currentExp = 0;
         maxExp = 90 + (10 * level);
     }
+    
     public void charmeleon() {
         name = "Charmeleon";
         pokedexNumber = 5;
@@ -126,6 +130,7 @@ public class Pokemon {
         currentExp = 0;
         maxExp = 90 + (10 * level);
     }
+    
     public void charizard() {
         name = "Charizard";
         pokedexNumber = 6;
@@ -141,6 +146,7 @@ public class Pokemon {
         currentExp = 0;
         maxExp = 90 + (10 * level);
     }
+    
     public void squirtle() {
         name = "Squirtle";
         pokedexNumber = 7;
@@ -156,6 +162,7 @@ public class Pokemon {
         currentExp = 0;
         maxExp = 90 + (10 * level);
     }
+    
     public void wartortle() {
         name = "Wartortle";
         pokedexNumber = 8;
@@ -171,6 +178,7 @@ public class Pokemon {
         currentExp = 0;
         maxExp = 90 + (10 * level);
     }
+    
     public void blastoise() {
         name = "Blastoise";
         pokedexNumber = 9;
