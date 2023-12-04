@@ -17,175 +17,184 @@ public class Pokemon {
     public double currentExp;
     public int maxExp;
 
-    // all numbers are test numbers will update later /!\
-    public void pikachu () {
-        name = "Pikachu";
-        pokedexNumber = 25;
-        type = "electric";
-        type2 = "none";
-        status = "alive";
-        level = 1;
-        maxHp = (100 + (5 * level));
-        currentHp = (100 + (5 * level));
-        attack = 5 + (1.2 * level);
-        defence = 3 + (1.1 * level);
-        pokemonEnergy = 0;
-        currentExp = 0;
-        maxExp = 90 + (10 * level);
+    public void pokemon(String name, int pokedexNumber, String type, String type2, String status, int level,
+                        int maxHp, int currentHp, double attack, double defence, int pokemonEnergy, int maxExp, int currentExp) {
+        this.name = name;
+        this.pokedexNumber = pokedexNumber;
+        this.type = type;
+        this.type2 = type2;
+        this.status = status;
+        this.level = level;
+        this.maxHp = maxHp;
+        this.currentHp = currentHp;
+        this.attack = attack;
+        this.defence = defence;
+        this.pokemonEnergy = pokemonEnergy;
+        this.currentExp = currentExp;
+        this.maxExp = maxExp;
 
     }
+}
 
-    public void abra () {
-        name = "Abra";
-        pokedexNumber = 63;
-        type = "psychic";
-        type2 = "none";
-        status = "alive";
-        level = 1;
-        maxHp = (100 + (3 * level));
-        currentHp = (100 + (3 * level));
-        attack = 6 + (1.3 * level);
-        defence = 2 + (0.8 * level);
-        pokemonEnergy = 0;
-        currentExp = 0;
-        maxExp = 90 + (10 * level);
-    }
-
-        public void bulbasaur() {
-            name = "Bulbasaur";
-            pokedexNumber = 1;
-            type = "grass";
-            type2 = "poison";
-            status = "alive";
-            level = 1;
-            maxHp = (100 + (3 * level));
-            currentHp = (100 + (3 * level));
-            attack = 6 + (1.3 * level);
-            defence = 2 + (0.8 * level);
-            pokemonEnergy = 0;
-            currentExp = 0;
-            maxExp = 90 + (10 * level);
-        }
-        public void ivysaur() {
-            name = "Ivysaur";
-            pokedexNumber = 2;
-            type = "grass";
-            type2 = "poison";
-            status = "alive";
-            level = 1;
-            maxHp = (100 + (3 * level));
-            currentHp = (100 + (3 * level));
-            attack = 6 + (1.3 * level);
-            defence = 2 + (0.8 * level);
-            pokemonEnergy = 0;
-            currentExp = 0;
-            maxExp = 90 + (10 * level);
-        }
-    public void venusaur() {
-        name = "Venusaur";
-        pokedexNumber = 3;
-        type = "grass";
-        type2 = "poison";
-        status = "alive";
-        level = 1;
-        maxHp = (100 + (3 * level));
-        currentHp = (100 + (3 * level));
-        attack = 6 + (1.3 * level);
-        defence = 2 + (0.8 * level);
-        pokemonEnergy = 0;
-        currentExp = 0;
-        maxExp = 90 + (10 * level);
-    }
-    public void charmander() {
-        name = "Charmander";
-        pokedexNumber = 4;
-        type = "fire";
-        type2 = "none";
-        status = "alive";
-        level = 1;
-        maxHp = (100 + (3 * level));
-        currentHp = (100 + (3 * level));
-        attack = 6 + (1.3 * level);
-        defence = 2 + (0.8 * level);
-        pokemonEnergy = 0;
-        currentExp = 0;
-        maxExp = 90 + (10 * level);
-    }
-    public void charmeleon() {
-        name = "Charmeleon";
-        pokedexNumber = 5;
-        type = "fire";
-        type2 = "none";
-        status = "alive";
-        level = 1;
-        maxHp = (100 + (3 * level));
-        currentHp = (100 + (3 * level));
-        attack = 6 + (1.3 * level);
-        defence = 2 + (0.8 * level);
-        pokemonEnergy = 0;
-        currentExp = 0;
-        maxExp = 90 + (10 * level);
-    }
-    public void charizard() {
-        name = "Charizard";
-        pokedexNumber = 6;
-        type = "fire";
-        type2 = "flying";
-        status = "alive";
-        level = 1;
-        maxHp = (100 + (3 * level));
-        currentHp = (100 + (3 * level));
-        attack = 6 + (1.3 * level);
-        defence = 2 + (0.8 * level);
-        pokemonEnergy = 0;
-        currentExp = 0;
-        maxExp = 90 + (10 * level);
-    }
-    public void squirtle() {
-        name = "Squirtle";
-        pokedexNumber = 7;
-        type = "water";
-        type2 = "none";
-        status = "alive";
-        level = 1;
-        maxHp = (100 + (3 * level));
-        currentHp = (100 + (3 * level));
-        attack = 6 + (1.3 * level);
-        defence = 2 + (0.8 * level);
-        pokemonEnergy = 0;
-        currentExp = 0;
-        maxExp = 90 + (10 * level);
-    }
-    public void wartortle() {
-        name = "Wartortle";
-        pokedexNumber = 8;
-        type = "water";
-        type2 = "none";
-        status = "alive";
-        level = 1;
-        maxHp = (100 + (3 * level));
-        currentHp = (100 + (3 * level));
-        attack = 6 + (1.3 * level);
-        defence = 2 + (0.8 * level);
-        pokemonEnergy = 0;
-        currentExp = 0;
-        maxExp = 90 + (10 * level);
-    }
-    public void blastoise() {
-        name = "Blastoise";
-        pokedexNumber = 9;
-        type = "water";
-        type2 = "none";
-        status = "alive";
-        level = 1;
-        maxHp = (100 + (3 * level));
-        currentHp = (100 + (3 * level));
-        attack = 6 + (1.3 * level);
-        defence = 2 + (0.8 * level);
-        pokemonEnergy = 0;
-        currentExp = 0;
-        maxExp = 90 + (10 * level);
-    }
+//    public void abra () {
+//        name = "Abra";
+//        pokedexNumber = 63;
+//        type = "psychic";
+//        type2 = "none";
+//        status = "alive";
+//        level = 1;
+//        maxHp = (100 + (3 * level));
+//        currentHp = (100 + (3 * level));
+//        attack = 6 + (1.3 * level);
+//        defence = 2 + (0.8 * level);
+//        pokemonEnergy = 0;
+//        currentExp = 0;
+//        maxExp = 90 + (10 * level);
+//    }
+//
+//    public void bulbasaur() {
+//            name = "Bulbasaur";
+//            pokedexNumber = 1;
+//            type = "grass";
+//            type2 = "poison";
+//            status = "alive";
+//            level = 1;
+//            maxHp = (100 + (3 * level));
+//            currentHp = (100 + (3 * level));
+//            attack = 6 + (1.3 * level);
+//            defence = 2 + (0.8 * level);
+//            pokemonEnergy = 0;
+//            currentExp = 0;
+//            maxExp = 90 + (10 * level);
+//    }
+//
+//    public void ivysaur() {
+//            name = "Ivysaur";
+//            pokedexNumber = 2;
+//            type = "grass";
+//            type2 = "poison";
+//            status = "alive";
+//            level = 1;
+//            maxHp = (100 + (3 * level));
+//            currentHp = (100 + (3 * level));
+//            attack = 6 + (1.3 * level);
+//            defence = 2 + (0.8 * level);
+//            pokemonEnergy = 0;
+//            currentExp = 0;
+//            maxExp = 90 + (10 * level);
+//    }
+//
+//    public void venusaur() {
+//        name = "Venusaur";
+//        pokedexNumber = 3;
+//        type = "grass";
+//        type2 = "poison";
+//        status = "alive";
+//        level = 1;
+//        maxHp = (100 + (3 * level));
+//        currentHp = (100 + (3 * level));
+//        attack = 6 + (1.3 * level);
+//        defence = 2 + (0.8 * level);
+//        pokemonEnergy = 0;
+//        currentExp = 0;
+//        maxExp = 90 + (10 * level);
+//    }
+//
+//    public void charmander() {
+//        name = "Charmander";
+//        pokedexNumber = 4;
+//        type = "fire";
+//        type2 = "none";
+//        status = "alive";
+//        level = 1;
+//        maxHp = (100 + (3 * level));
+//        currentHp = (100 + (3 * level));
+//        attack = 6 + (1.3 * level);
+//        defence = 2 + (0.8 * level);
+//        pokemonEnergy = 0;
+//        currentExp = 0;
+//        maxExp = 90 + (10 * level);
+//    }
+//
+//    public void charmeleon() {
+//        name = "Charmeleon";
+//        pokedexNumber = 5;
+//        type = "fire";
+//        type2 = "none";
+//        status = "alive";
+//        level = 1;
+//        maxHp = (100 + (3 * level));
+//        currentHp = (100 + (3 * level));
+//        attack = 6 + (1.3 * level);
+//        defence = 2 + (0.8 * level);
+//        pokemonEnergy = 0;
+//        currentExp = 0;
+//        maxExp = 90 + (10 * level);
+//    }
+//
+//    public void charizard() {
+//        name = "Charizard";
+//        pokedexNumber = 6;
+//        type = "fire";
+//        type2 = "flying";
+//        status = "alive";
+//        level = 1;
+//        maxHp = (100 + (3 * level));
+//        currentHp = (100 + (3 * level));
+//        attack = 6 + (1.3 * level);
+//        defence = 2 + (0.8 * level);
+//        pokemonEnergy = 0;
+//        currentExp = 0;
+//        maxExp = 90 + (10 * level);
+//    }
+//
+//    public void squirtle() {
+//        name = "Squirtle";
+//        pokedexNumber = 7;
+//        type = "water";
+//        type2 = "none";
+//        status = "alive";
+//        level = 1;
+//        maxHp = (100 + (3 * level));
+//        currentHp = (100 + (3 * level));
+//        attack = 6 + (1.3 * level);
+//        defence = 2 + (0.8 * level);
+//        pokemonEnergy = 0;
+//        currentExp = 0;
+//        maxExp = 90 + (10 * level);
+//    }
+//
+//    public void wartortle() {
+//        name = "Wartortle";
+//        pokedexNumber = 8;
+//        type = "water";
+//        type2 = "none";
+//        status = "alive";
+//        level = 1;
+//        maxHp = (100 + (3 * level));
+//        currentHp = (100 + (3 * level));
+//        attack = 6 + (1.3 * level);
+//        defence = 2 + (0.8 * level);
+//        pokemonEnergy = 0;
+//        currentExp = 0;
+//        maxExp = 90 + (10 * level);
+//    }
+//
+//    public void blastoise() {
+//        name = "Blastoise";
+//        pokedexNumber = 9;
+//        type = "water";
+//        type2 = "none";
+//        status = "alive";
+//        level = 1;
+//        maxHp = (100 + (3 * level));
+//        currentHp = (100 + (3 * level));
+//        attack = 6 + (1.3 * level);
+//        defence = 2 + (0.8 * level);
+//        pokemonEnergy = 0;
+//        currentExp = 0;
+//        maxExp = 90 + (10 * level);
+//    }
 /*
 
 
@@ -333,5 +342,4 @@ public class Pokemon {
 151 	151 	mew 		psychic
 
          */
-}
 

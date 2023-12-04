@@ -6,20 +6,11 @@ public class Moves {
     public int moveDmg;
     public int energyVar;
 
-    public void tackle(){
-        moveType = "normal";
-        moveDmg = 12;
-        energyVar = 10;
-        speed = "quick";
-
-    }
-    public void thunder() {
-        moveType = "electric";
-        moveDmg = 40;
-        energyVar = -40;
-        speed = "charged";
-
-
+    public void move(String moveType, int moveDmg, int energyVar, String speed){
+        this.moveType = moveType;
+        this.moveDmg = moveDmg;
+        this.energyVar = energyVar;
+        this.speed = "quick";
 
     }
 }
