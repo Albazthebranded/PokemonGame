@@ -1,39 +1,138 @@
-package Pokemon.Game;
+package Pokemon.Game.Pokemons;
 
-public class Pokemon {
+import Pokemon.Game.Moves.Moves;
 
-    public String name;
-    public int pokedexNumber;
-    public String type;
-    public String type2;
-    public int level;
-    public String status;
-    public double currentHp;
-    public double maxHp;
-    public double attack;
-    public double defence;
-    public int pokemonEnergy;
+import java.util.List;
 
-    public double currentExp;
-    public int maxExp;
+public abstract class Pokemon {
 
-    public void pokemon(String name, int pokedexNumber, String type, String type2, String status, int level,
-                        int maxHp, int currentHp, double attack, double defence, int pokemonEnergy, int maxExp, int currentExp) {
-        this.name = name;
-        this.pokedexNumber = pokedexNumber;
-        this.type = type;
-        this.type2 = type2;
-        this.status = status;
-        this.level = level;
-        this.maxHp = maxHp;
-        this.currentHp = currentHp;
-        this.attack = attack;
-        this.defence = defence;
-        this.pokemonEnergy = pokemonEnergy;
-        this.currentExp = currentExp;
-        this.maxExp = maxExp;
+	protected String name;
+	protected int pokedexNumber;
+	protected String type;
+	protected String type2;
+	protected int level;
+	protected String status;
+	protected double currentHp;
+	protected double maxHp;
+	protected double attack;
+	protected double defence;
+	protected int pokemonEnergy;
+	protected double currentExp;
+	protected int maxExp;
+	protected List<Moves> knownMoves;
 
-    }
+	public double getCurrentHp() {
+		return currentHp;
+	}
+
+	public int getPokemonEnergy() {
+		return pokemonEnergy;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public String getType2() {
+		return type2;
+	}
+
+	public double getAttack() {
+		return attack;
+	}
+
+	public double getDefence() {
+		return defence;
+	}
+
+	public void setCurrentHp(Double currentHp) {
+		this.currentHp = currentHp;
+
+		if (this.currentHp > this.maxHp) {
+			this.currentHp = this.maxHp;
+			return;
+		}
+		if (this.currentHp <= 0) {
+			this.currentHp = 0;
+			this.status = "down";
+		}
+	}
+
+	public void setPokemonEnergy(int energy) {
+		this.pokemonEnergy = energy;
+
+		if (this.pokemonEnergy > 100) {
+			this.pokemonEnergy = 100;
+			return;
+		}
+
+		if (this.pokemonEnergy < 0) {
+			this.pokemonEnergy = 0;
+		}
+	}
+
+	public void calculateEnergy(Moves move) {
+		if (move.getSpeed().equals("quick")) {
+			setPokemonEnergy(this.pokemonEnergy + move.getEnergyVar());
+
+		}
+
+		if (move.getSpeed().equals("charged")) {
+			if (this.pokemonEnergy < move.getEnergyVar()) {
+				throw new IllegalArgumentException("Pokemon needs " + move.getEnergyVar() + "but it currently has only: " + this.pokemonEnergy);
+			}
+			setPokemonEnergy(this.pokemonEnergy -= move.getEnergyVar());
+		}
+	}
+
+	public void takeDamage(Double damage) {
+		setCurrentHp(currentHp - damage);
+	}
+
+	public void pokemon(String name, int pokedexNumber, String type, String type2, String status, int level,
+						int maxHp, int currentHp, double attack, double defence, int pokemonEnergy, int maxExp, int currentExp) {
+		this.name = name;
+		this.pokedexNumber = pokedexNumber;
+		this.type = type;
+		this.type2 = type2;
+		this.status = status;
+		this.level = level;
+		this.maxHp = maxHp;
+		this.currentHp = currentHp;
+		this.attack = attack;
+		this.defence = defence;
+		this.pokemonEnergy = pokemonEnergy;
+		this.currentExp = currentExp;
+		this.maxExp = maxExp;
+
+	}
+
+	public void gainExp(int defeatedPokemonLevel) {
+		if (isDown()) {
+			return;
+		}
+
+		this.currentExp += Math.min(0.75 * this.currentExp, ((20 + this.level) * ((double) defeatedPokemonLevel / this.level)));
+		this.currentExp = Math.round(this.currentExp);
+
+		if (this.currentExp >= this.maxExp) {
+			levelUp();
+		}
+	}
+
+	public boolean isDown() {
+		return this.status.equals("down");
+	}
+
+	protected void levelUp() {
+		this.currentExp -= this.maxExp;
+		this.maxExp += 35;
+		this.level++;
+	}
 }
 
 //    public void abra () {
@@ -198,9 +297,9 @@ public class Pokemon {
 /*
 
 
-010 	010 	caterpie 	bug
-011 	011 	metapod 	bug
-012 	012 	butterfree 	bug 	flying
+010  	caterpie 	bug
+011  	metapod 	bug
+012 	butterfree 	bug 	flying
 013 	013 	weedle 		bug 	poison
 014 	014 	kakuna 		bug 	poison
 015 	015 	beedrill 	bug 	poison
