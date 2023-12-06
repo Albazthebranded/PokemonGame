@@ -20,5 +20,7 @@ public class Abra extends Pokemon {
 	protected void levelUp() {
 		super.levelUp();
 		this.maxHp += 3;
+		this.attack += 0.8;
+		this.defence += 0.1;
 	}
 }

@@ -2,6 +2,7 @@ package Pokemon.Game.Moves;
 
 public class Tackle extends Moves {
 	public Tackle() {
+		this.moveName = "Tackle";
 		this.moveType = "normal";
 		this.speed = "quick";
 		this.moveDmg = 12;

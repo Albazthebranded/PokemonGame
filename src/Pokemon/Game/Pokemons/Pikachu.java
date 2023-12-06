@@ -20,6 +20,8 @@ public class Pikachu extends Pokemon {
 	@Override
 	protected void levelUp() {
 		super.levelUp();
-		this.maxHp += 2;
+		this.maxHp += 5;
+		this.attack += 1.1;
+		this.defence += 0.6;
 	}
 }

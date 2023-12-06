@@ -2,6 +2,7 @@ package Pokemon.Game;
 
 import Pokemon.Game.Moves.Moves;
 import Pokemon.Game.Moves.Tackle;
+import Pokemon.Game.Moves.Thunder;
 import Pokemon.Game.Pokemons.Abra;
 import Pokemon.Game.Pokemons.Pikachu;
 import Pokemon.Game.Pokemons.Pokemon;
@@ -15,6 +16,7 @@ public class Main {
         Pokemon pikachu = new Pikachu();
         Pokemon abra = new Abra();
         Moves tackle = new Tackle();
+        Moves electrocute = new Thunder();
 
 //        abra.pokemon("Abra", 1, "psychic", "none", "alive",
 //                1, 100, 100, 15, 12, 0, 100, 0);
@@ -26,5 +28,11 @@ public class Main {
 
         System.out.println(pikachu.getPokemonEnergy());
         System.out.println(pikachu.getCurrentHp());
+
+        Attack.attack(pikachu, abra, tackle);
+        Attack.attack(pikachu, abra, tackle);
+        Attack.attack(pikachu, abra, electrocute);
+
+        System.out.println(abra.getCurrentHp());
     }
 }

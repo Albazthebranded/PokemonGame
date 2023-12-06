@@ -49,7 +49,7 @@ public abstract class Pokemon {
 		return defence;
 	}
 
-	public void setCurrentHp(Double currentHp) {
+	public void setCurrentHp(double currentHp) {
 		this.currentHp = currentHp;
 
 		if (this.currentHp > this.maxHp) {
@@ -93,23 +93,6 @@ public abstract class Pokemon {
 		setCurrentHp(currentHp - damage);
 	}
 
-	public void pokemon(String name, int pokedexNumber, String type, String type2, String status, int level,
-						int maxHp, int currentHp, double attack, double defence, int pokemonEnergy, int maxExp, int currentExp) {
-		this.name = name;
-		this.pokedexNumber = pokedexNumber;
-		this.type = type;
-		this.type2 = type2;
-		this.status = status;
-		this.level = level;
-		this.maxHp = maxHp;
-		this.currentHp = currentHp;
-		this.attack = attack;
-		this.defence = defence;
-		this.pokemonEnergy = pokemonEnergy;
-		this.currentExp = currentExp;
-		this.maxExp = maxExp;
-
-	}
 
 	public void gainExp(int defeatedPokemonLevel) {
 		if (isDown()) {
