@@ -6,116 +6,127 @@ import java.util.List;
 
 public abstract class Pokemon {
 
-	protected String name;
-	protected int pokedexNumber;
-	protected String type;
-	protected String type2;
-	protected int level;
-	protected String status;
-	protected double currentHp;
-	protected double maxHp;
-	protected double attack;
-	protected double defence;
-	protected int pokemonEnergy;
-	protected double currentExp;
-	protected int maxExp;
-	protected List<Moves> knownMoves;
+    protected String name;
+    protected int pokedexNumber;
+    protected String type;
+    protected String type2;
+    protected int level;
+    protected String status;
+    protected double currentHp;
+    protected double maxHp;
+    protected double attack;
+    protected double defence;
+    protected int pokemonEnergy;
+    protected double currentExp;
+    protected int maxExp;
+    protected int evoNum;
+    protected int evoCount;
+    protected List<Moves> knownMoves;
 
-	public double getCurrentHp() {
-		return currentHp;
-	}
+    public double getCurrentHp() {
+        return currentHp;
+    }
 
-	public int getPokemonEnergy() {
-		return pokemonEnergy;
-	}
+    public int getPokemonEnergy() {
+        return pokemonEnergy;
+    }
 
-	public int getLevel() {
-		return level;
-	}
+    public int getLevel() {
+        return level;
+    }
 
-	public String getType() {
-		return type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public String getType2() {
-		return type2;
-	}
+    public String getType2() {
+        return type2;
+    }
 
-	public double getAttack() {
-		return attack;
-	}
+    public double getAttack() {
+        return attack;
+    }
 
-	public double getDefence() {
-		return defence;
-	}
+    public double getDefence() {
+        return defence;
+    }
 
-	public void setCurrentHp(double currentHp) {
-		this.currentHp = currentHp;
+    public double getCurrentExp() {
+        return currentExp;
+    }
 
-		if (this.currentHp > this.maxHp) {
-			this.currentHp = this.maxHp;
-			return;
-		}
-		if (this.currentHp <= 0) {
-			this.currentHp = 0;
-			this.status = "down";
-		}
-	}
+    public void setCurrentHp(double currentHp) {
+        this.currentHp = Math.round(currentHp);
 
-	public void setPokemonEnergy(int energy) {
-		this.pokemonEnergy = energy;
+        if (this.currentHp > this.maxHp) {
+            this.currentHp = this.maxHp;
+            return;
+        }
+        if (this.currentHp <= 0) {
+            this.currentHp = 0;
+            this.status = "down";
+        }
+    }
 
-		if (this.pokemonEnergy > 100) {
-			this.pokemonEnergy = 100;
-			return;
-		}
+    public void setPokemonEnergy(int energy) {
+        this.pokemonEnergy = energy;
 
-		if (this.pokemonEnergy < 0) {
-			this.pokemonEnergy = 0;
-		}
-	}
+        if (this.pokemonEnergy > 100) {
+            this.pokemonEnergy = 100;
+            return;
+        }
 
-	public void calculateEnergy(Moves move) {
-		if (move.getSpeed().equals("quick")) {
-			setPokemonEnergy(this.pokemonEnergy + move.getEnergyVar());
+        if (this.pokemonEnergy < 0) {
+            this.pokemonEnergy = 0;
+        }
+    }
 
-		}
+    public void calculateEnergy(Moves move) {
+        if (move.getSpeed().equals("quick")) {
+            setPokemonEnergy(this.pokemonEnergy + move.getEnergyVar());
 
-		if (move.getSpeed().equals("charged")) {
-			if (this.pokemonEnergy < move.getEnergyVar()) {
-				throw new IllegalArgumentException("Pokemon needs " + move.getEnergyVar() + "but it currently has only: " + this.pokemonEnergy);
-			}
-			setPokemonEnergy(this.pokemonEnergy -= move.getEnergyVar());
-		}
-	}
+        }
 
-	public void takeDamage(Double damage) {
-		setCurrentHp(currentHp - damage);
-	}
+        if (move.getSpeed().equals("charged")) {
+            if (this.pokemonEnergy < move.getEnergyVar()) {
+                throw new IllegalArgumentException("Pokemon needs " + move.getEnergyVar() + "but it currently has only: " + this.pokemonEnergy);
+            }
+            setPokemonEnergy(this.pokemonEnergy -= move.getEnergyVar());
+        }
+    }
+
+    public void takeDamage(Double damage) {
+        setCurrentHp(currentHp - damage);
+    }
 
 
-	public void gainExp(int defeatedPokemonLevel) {
-		if (isDown()) {
-			return;
-		}
+    public void gainExp(int defeatedPokemonLevel) {
+        if (isDown()) {
+            return;
+        }
 
-		this.currentExp += Math.min(0.75 * this.currentExp, ((20 + this.level) * ((double) defeatedPokemonLevel / this.level)));
-		this.currentExp = Math.round(this.currentExp);
+        this.currentExp += Math.min(0.75 * this.maxExp, ((20 + this.level) * ((double) defeatedPokemonLevel / this.level)));
+        this.currentExp = Math.round(this.currentExp);
 
-		if (this.currentExp >= this.maxExp) {
-			levelUp();
-		}
-	}
+        if (this.currentExp >= this.maxExp) {
+            levelUp();
+        }
+    }
 
-	public boolean isDown() {
-		return this.status.equals("down");
-	}
+    public boolean isDown() {
+        return this.status.equals("down");
+    }
 
-	protected void levelUp() {
-		this.currentExp -= this.maxExp;
-		this.maxExp += 35;
-		this.level++;
-	}
+    protected void levelUp() {
+        this.currentExp -= this.maxExp;
+        this.maxExp += 35;
+        this.level++;
+    }
+
+    protected void evolve() {
+            this.pokedexNumber++;
+            this.evoNum++;
+    }
 }
 
 //    public void abra () {

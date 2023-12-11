@@ -7,14 +7,6 @@ public abstract class Moves {
     protected int moveDmg;
     protected int energyVar;
 
-    public void move(String moveName, String moveType, int moveDmg, int energyVar, String speed){
-        this.moveName = moveName;
-        this.moveType = moveType;
-        this.moveDmg = moveDmg;
-        this.energyVar = energyVar;
-        this.speed = speed;
-    }
-
     public String getMoveType() {
         return moveType;
     }

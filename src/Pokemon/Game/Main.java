@@ -6,6 +6,7 @@ import Pokemon.Game.Moves.Thunder;
 import Pokemon.Game.Pokemons.Abra;
 import Pokemon.Game.Pokemons.Pikachu;
 import Pokemon.Game.Pokemons.Pokemon;
+import Pokemon.Game.Pokemons.Squirtle;
 import Pokemon.Game.Utils.Attack;
 
 public class Main {
@@ -15,24 +16,35 @@ public class Main {
         //testing
         Pokemon pikachu = new Pikachu();
         Pokemon abra = new Abra();
+        Pokemon squirtle = new Squirtle();
         Moves tackle = new Tackle();
-        Moves electrocute = new Thunder();
+        Moves thunder = new Thunder();
 
-//        abra.pokemon("Abra", 1, "psychic", "none", "alive",
-//                1, 100, 100, 15, 12, 0, 100, 0);
+//        Attack.attack(pikachu, abra, tackle);
+//
+//        System.out.println(Math.round(abra.getCurrentHp()));
+//        System.out.println(abra.getPokemonEnergy());
+//
+//        System.out.println(pikachu.getPokemonEnergy());
+//        System.out.println(pikachu.getCurrentHp());
+//
+//        Attack.attack(pikachu, abra, tackle);
+//        Attack.attack(pikachu, abra, tackle);
+//        Attack.attack(pikachu, abra, thunder);
+//
+//        System.out.println(abra.getCurrentHp());
 
-        Attack.attack(pikachu, abra, tackle);
+        Attack.attack(pikachu, squirtle, tackle);
+        System.out.println(squirtle.getCurrentHp());
+        Attack.attack(pikachu, squirtle, tackle);
+        System.out.println(squirtle.getCurrentHp());
+        Attack.attack(pikachu, squirtle, tackle);
+        System.out.println(squirtle.getCurrentHp());
+        Attack.attack(pikachu, squirtle, thunder);
+        System.out.println(squirtle.getCurrentHp());
+        System.out.println(pikachu.getLevel());
+        System.out.println(pikachu.getCurrentExp());
+        pikachu = new Squirtle();
 
-        System.out.println(Math.round(abra.getCurrentHp()));
-        System.out.println(abra.getPokemonEnergy());
-
-        System.out.println(pikachu.getPokemonEnergy());
-        System.out.println(pikachu.getCurrentHp());
-
-        Attack.attack(pikachu, abra, tackle);
-        Attack.attack(pikachu, abra, tackle);
-        Attack.attack(pikachu, abra, electrocute);
-
-        System.out.println(abra.getCurrentHp());
     }
 }
